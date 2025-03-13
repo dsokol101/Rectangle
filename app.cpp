@@ -4,11 +4,12 @@ using namespace std;
 
 int main()
 {
-    Rectangle rect{3, 4};
+    // create and initialize an object on the stack
+    Rectangle rect;
     //  rect.set_values(3, 4);
     cout << "area: " << rect.area() << endl;
-
-    Rectangle *rectptr = new Rectangle{8, 10};
+    // create and initialize an object on the heap
+    Rectangle *rectptr = new Rectangle;
     cout << "area of second Rectangle: " << rectptr->area();
     delete rectptr;
     return 0;
