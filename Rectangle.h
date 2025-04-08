@@ -1,40 +1,43 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
+#include <iostream> // for std::cout
 // the .h file provides the class declaration
 // the .cpp file provides the class definition
 // the .cpp file includes the .h file
 
-/**
- * constructors:
- * 1. have the same name as a classs
- * 2. do not have a return type
- * 3. are used to initialize objects
- * 4. are called automatically when an object is created
- * 5. If you do not write any constructor, the compiler
- * will write a default constructor for you
- * These 5 points are identical to Java constructors
- *
- What is new or different from Java?
- 1. memberwise initialization
- 2. default constructor's behavior is different:
-    in Java, the default constructor initializes all
-    instance variables to 0, null, false
-    in C++, the default constructor, default initializes
-    all instance variables
-    meaning: fundamenatal types are not initialized
-    and objects are initialized by their default constructor
- */
+/*
+What is the difference between a copy constructor and the operator= ?
+The copy constructor is a constructor and operator= is a regular member function
+A constructor is called when an object is created, while operator= is called
+when an object is assigned the values of an existing object. With the operator= 
+the left side is an existing object, while with the copy constructor the left side is a new object.
+*/ 
 
 class Rectangle
 {
 private:
-  double width, height;
+  double width=0, height=0; // show to class on April 1st
 
 public:
   Rectangle(); // function declaration (prototype)
                // this is a default constructor
   // inline constructor
   Rectangle(double w, double h) : width(w), height(h) {}
+  // copy constructor
+  Rectangle(const Rectangle &other) : width(other.width), height(other.height) 
+  { 
+    static int count = 0;
+    count++;
+    std::cout << "Copy constructor called " << count << std::endl; 
+  }
+  // move constructor
+  // this is a constructor that takes an rvalue reference as a parameter
+  Rectangle(Rectangle &&other) : width(other.width), height(other.height) 
+  { 
+    static int count = 0;
+    count++;
+    std::cout << "Move constructor called " << count << std::endl; 
+  }
   // inline member functions
   void set_width(double w) { width = w; }
   void set_height(double h) { height = h; }
