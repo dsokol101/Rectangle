@@ -9,14 +9,18 @@ using namespace std;
 void enlarge_actual(Rectangle& r);
 void enlarge_actual(Rectangle* r);
 void enlarge(Rectangle r);
-Rectangle* getRectangle9x9PtrFixed();
+Rectangle* getRectangle9x9PtrFixed(); // fixed version
+Rectangle* getRectangle9x9Ptr(); // bad version
 
 int main()
 {
+    // Rectangle* rp = getRectangle9x9Ptr();
+    // cout << "width: " << rp->get_width() << endl;
+   
     // create and initialize an object on the stack
     Rectangle rect; // default constructor
     rect.set_values(3, 4);
-    cout << "area: " << rect.area() << endl;
+    cout << "area: " << rect.area()  << endl;
     
     // 3 ways of initializing a Rectangle object to another Rectangle object
     // all 3 ways are invoking the copy constructor
