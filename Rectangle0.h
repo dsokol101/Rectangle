@@ -1,4 +1,4 @@
-/*   a class in C++ gives you a new data type
+/* a class in C++ gives you a new data type
    members are private by default
    it gives the language the OOP paradigm
    
@@ -14,6 +14,8 @@ class Rectangle {
   private: 
     double width, height;
   public:
+    Rectangle(); // default constructor
+    Rectangle(double w, double h); 
     void set_width(double w);
     void set_height(double h);
     double get_width();

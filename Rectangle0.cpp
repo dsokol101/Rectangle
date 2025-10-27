@@ -19,8 +19,32 @@
 #include "Rectangle0.h"
 using namespace std;
 
+// constructors
+Rectangle::Rectangle() {
+  width = 0;
+  height = 0;
+}
+Rectangle::Rectangle(double width, double height) {
+  this->width = width;
+  this->height = height;
+}
+void Rectangle::set_width(double w) {
+  width = w;
+}
 
+void Rectangle::set_height(double h) {
+  height = h;
+}
+double Rectangle::get_width() {
+  return width;
+}  
+double Rectangle::get_height() {
+  return height;
+}  
 void Rectangle::set_values (double x, double y) {
   width = x;
   height = y;
+}
+double Rectangle::area() {
+  return width * height;
 }
