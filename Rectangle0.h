@@ -1,3 +1,6 @@
+#ifndef RECTANGLE0_H
+#define RECTANGLE0_H 
+
 /* a class in C++ gives you a new data type
    members are private by default
    it gives the language the OOP paradigm
@@ -23,3 +26,4 @@ class Rectangle {
     void set_values (double, double);
     double area();
 };
+#endif
