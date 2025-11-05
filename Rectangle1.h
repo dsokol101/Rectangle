@@ -14,6 +14,7 @@ private:
   double width=0, height=0; // show to class on April 1st
 
 public:
+ static inline int copyConstCalls=0; // count copy constructor calls
  Rectangle();// function declaration (prototype)
                // this is a default constructor
   // inline constructor
@@ -21,6 +22,7 @@ public:
   // copy constructor with same behavior as default copy constructor
   Rectangle(const Rectangle& other) : width{other.width}, height{other.height} {
     cout << "Copy constructor called" << endl;
+    copyConstCalls++;
   } // default copy constructor
   // inline member functions
   void set_width(double w) { width = w; }

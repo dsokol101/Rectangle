@@ -11,7 +11,7 @@ using namespace std;
 // The compiler does NOT provide a default constructor
 
 // When I pass an object by value, and make changes in the function, do they stick?
-void enlargeRectangle(Rectangle &r);
+void enlargeRectangle(Rectangle r);
 void displayRectangle(Rectangle r);
 
 int main()
@@ -40,13 +40,14 @@ int main()
     pRect -> set_width(6);
     cout << "area: " << pRect -> area() << endl;
     delete pRect; // free the memory
+    cout << " in the end there are " << Rectangle::copyConstCalls << " copy constructor calls" << endl; 
     return 0;
 }
 void displayRectangle(Rectangle r)
 {
     cout << "In displayRectangle, height: " << r.get_height() << " width: " << r.get_width() << endl;
 }
-void enlargeRectangle(Rectangle &r)
+void enlargeRectangle(Rectangle r)
 {
     r.set_height(r.get_height() + 1);
     r.set_width(r.get_width() + 1);

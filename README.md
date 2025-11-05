@@ -1,20 +1,27 @@
-#Rectangle class
+📐 Rectangle Class
 
-This is the code from class on classes and OOP in C++
+This repository contains code demonstrating classes and Object-Oriented Programming (OOP) concepts in C++, as covered in class.
 
-##Rectangle Version 0
+📦 Rectangle Version 0
 
-Class declaration is in the .h file and function definitions are in the Rectangle0.cpp
-file. This is a very simple version of the class.
+The class declaration is in the .h file and the function definitions are in the Rectangle0.cpp file. This is a very simple, foundational version of the class.
 
-##Rectangle Version 1
+✨ Rectangle Version 1
 
--  include guards   
--  inline functions
--  member initialization
--  copy constructor
+This version expands on the basic class to include several key C++ features:
 
-##Rectangle Version 2
+    Include Guards: To prevent multiple file inclusions.
 
-Uses composition with the Length class
-Shows how to call the constructor of the Length class on the member variables using the member initialization list
+    Inline Functions: Used for short member functions to potentially improve performance.
+
+    Member Initialization: Demonstrates initializing class members.
+
+    Copy Constructor: Provides custom handling for object copying.
+
+🏗️ Rectangle Version 2
+
+This version demonstrates the Composition OOP principle:
+
+    It uses composition with a separate Length class.
+
+    It shows how to properly call the constructor of the Length class on the member variables using the member initialization list.
