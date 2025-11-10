@@ -17,9 +17,14 @@ private:
   Length height;
 
 public:
-  Rectangle() : width(0), height(0) {}; // width(0) will call parameter constructor of the 
+// the following default constructor for the Rectangle class invokes the Length
+// class constructor twice, once on the width object and once on the height object
+  // Rectangle() : width(0), height(0) {}; // width(0) will call parameter constructor of the 
   // Length class, passing 0 as the argument
-  
+
+  Rectangle() {}
+  Rectangle(Length w, Length h);
+  Rectangle(int w, int h);
   // in java, if you wanted to call a member's constructor with parameters
   // you would do it in the body of the constructor
   // example:

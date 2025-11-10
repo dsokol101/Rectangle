@@ -1,3 +1,6 @@
+#ifndef LENGTH_H
+#define LENGTH_H
+
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -9,8 +12,14 @@ private:
 
 public:
     // 1. constructor with one integer parameter
-    Length(int inches) : inches(inches) {}
+    Length(int inches) : inches(inches) {
+        cout << "Length parameter constructor called " << this << endl;
+    }
+    Length() : inches(0) { cout<<"Length default constructor called " << this << endl; }
 
+    Length(const Length& other) : inches(other.inches) {
+        cout << "Length copy constructor called " << this << endl;
+    }   
     // 2. display as a number of feet and remaining inches
     // (for example, 30 inches should display as "2 feet 6 inches")
     void display() const {
@@ -26,7 +35,4 @@ public:
         return abs(inches - other.inches);
     }   
 };
-// outside of the class 
-int lengthDistance(Length a, Length b) {
-    return abs(a.getInches() - b.getInches());
-}
+#endif

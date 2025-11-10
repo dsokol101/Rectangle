@@ -25,3 +25,6 @@ This version demonstrates the Composition OOP principle:
     It uses composition with a separate Length class.
 
     It shows how to properly call the constructor of the Length class on the member variables using the member initialization list.
+
+    We showed 3 different constructors in the Length class: default, integer parameter,
+    and Length parameter (ie copy constructor)
