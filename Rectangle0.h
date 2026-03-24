@@ -14,8 +14,10 @@
 using namespace std;
 
 class Rectangle {
+  // state - member variables - fields - attributes
   private: 
-    double width, height;
+    double width, height; // no memory allocated from this stmt
+  // behavior - member functions - methods - services
   public:
     Rectangle(); // default constructor
     Rectangle(double w, double h); 

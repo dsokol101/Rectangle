@@ -17,17 +17,18 @@
    */
 #include <iostream>
 #include "Rectangle0.h"
-using namespace std;
 
 // constructors
+/**
 Rectangle::Rectangle() {
   width = 0;
   height = 0;
-}
+}*/
 Rectangle::Rectangle(double width, double height) {
   this->width = width;
   this->height = height;
 }
+
 void Rectangle::set_width(double w) {
   width = w;
 }

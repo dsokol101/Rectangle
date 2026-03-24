@@ -1,5 +1,4 @@
 #include "Rectangle0.h"
-#include "Window.h"
 
 #include <iostream>
 using namespace std;
@@ -17,8 +16,8 @@ int main()
     // create and initialize an object on the stack
     Rectangle rect, rect2; // default constructor
     
-   // rect.set_values(3, 4);
-    cout << "area of rect before assigning any values: " << rect.area()  << endl;
+    rect.set_values(3, 4); // I can call member functions immediately after creating the object
+    cout << "area of rect after assigning values 3,4: " << rect.area()  << endl;
     enlargeRectangle(rect);
     cout << "back in main, after calling enlargeRectangle" << endl;
     displayRectangle(rect);
