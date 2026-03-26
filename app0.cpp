@@ -18,11 +18,24 @@ int main()
     
     rect.set_values(3, 4); // I can call member functions immediately after creating the object
     cout << "area of rect after assigning values 3,4: " << rect.area()  << endl;
+    
+    // can i invoke operator = if it was not written in the class definition? 
+    // YES, the compiler provides a default assignment operator 
+    // which copies the values of the members from one object to another
+    // called: memberwise copy
+    rect2=rect; // default assignment operator
+
+    Rectangle rect3{rect}; // default copy constructor, also does memberwise copy
+    // the following 2 are identical
+    // Rectangle rect3 = rect; // also calls the default copy constructor
+    // Rectangle rect3(rect); // also calls the default copy constructor
+    
+    // passing an object as a parameter BY VALUE
+    // a copy is made by the copy constructor
+    // and therefore the changes will not affect rect here
     enlargeRectangle(rect);
     cout << "back in main, after calling enlargeRectangle" << endl;
     displayRectangle(rect);
-
-    rect2=rect; // default assignment operator
 
     // create and initialize an object on the heap
     Rectangle *pRect = new Rectangle(); // default constructor

@@ -19,12 +19,13 @@
 #include "Rectangle0.h"
 
 // constructors
-/**
+
 Rectangle::Rectangle() {
   width = 0;
   height = 0;
-}*/
+}
 Rectangle::Rectangle(double width, double height) {
+  // this is a pointer to the receiver object, the object that is calling the function
   this->width = width;
   this->height = height;
 }
