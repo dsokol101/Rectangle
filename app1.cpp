@@ -31,7 +31,7 @@ int main()
     //Rectangle rect3=rect; // identical to above
     // Rectangle rect3{rect}; // identical to above
 
-
+    rect3.setColor("green");
     rect2=rect; // default assignment operator
 
     // create and initialize an object on the heap

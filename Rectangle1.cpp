@@ -2,10 +2,9 @@
 // Rectangle.cpp
 #include "Rectangle1.h"
 #include <iostream>
-// memberwise initialization
-// before you enter the body of the constructor,
-// the members are already initialized
-Rectangle::Rectangle() : width(1.0), height(1.0) {}
+
+// DEFINE and initialize static data member 
+int Rectangle::copyConstCalls=0; 
 
 double Rectangle::area()
 {

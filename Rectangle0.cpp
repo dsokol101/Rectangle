@@ -24,6 +24,11 @@ Rectangle::Rectangle() {
   width = 0;
   height = 0;
 }
+Rectangle::Rectangle(const Rectangle &other) {
+  cout << "In copy constructor" << endl;
+  this->width = other.width;
+  this->height = other.height;
+}
 Rectangle::Rectangle(double width, double height) {
   // this is a pointer to the receiver object, the object that is calling the function
   this->width = width;

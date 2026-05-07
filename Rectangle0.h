@@ -20,6 +20,7 @@ class Rectangle {
   // behavior - member functions - methods - services
   public:
     Rectangle(); // default constructor
+    Rectangle(const Rectangle &r);// copy constructor, takes a reference to an object of the same class
     Rectangle(double w, double h); 
     void set_width(double w);
     void set_height(double h);

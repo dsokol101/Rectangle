@@ -13,5 +13,10 @@ int main()
 
     Rectangle *rectPtr = new Rectangle();
     cout << "Area of object on heap: " << rectPtr->area() << endl;
+    // NOTE: the Rectangle class does not have a copy constructor defined
+    // however, the following statement will invoke the copy constructor (provided by the compiler)
+    // which in turn will invoke the copy constructor of the Length class twice
+    Rectangle rect5 = rect3; // copy constructor of Length class gets called twice
+
     delete rectPtr;
 }

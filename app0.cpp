@@ -9,6 +9,7 @@ using namespace std;
 
 // When I pass an object by value, and make changes in the function, do they stick?
 void enlargeRectangle(Rectangle r);
+void enlargeRectangleActual(Rectangle &r); // pass by reference, changes will stick
 void displayRectangle(Rectangle r);
 
 int main()
@@ -25,7 +26,7 @@ int main()
     // called: memberwise copy
     rect2=rect; // default assignment operator
 
-    Rectangle rect3{rect}; // default copy constructor, also does memberwise copy
+    Rectangle rect3{rect}; // copy constructor, also does memberwise copy
     // the following 2 are identical
     // Rectangle rect3 = rect; // also calls the default copy constructor
     // Rectangle rect3(rect); // also calls the default copy constructor
@@ -35,6 +36,10 @@ int main()
     // and therefore the changes will not affect rect here
     enlargeRectangle(rect);
     cout << "back in main, after calling enlargeRectangle" << endl;
+    displayRectangle(rect);
+
+    enlargeRectangleActual(rect);
+    cout << "back in main, after calling enlargeRectangleActual" << endl;
     displayRectangle(rect);
 
     // create and initialize an object on the heap
@@ -49,6 +54,13 @@ void displayRectangle(Rectangle r)
 {
     cout << "In displayRectangle, height: " << r.get_height() << " width: " << r.get_width() << endl;
 }
+// pass by reference, changes will stick
+void enlargeRectangleActual(Rectangle &r)
+{
+    r.set_height(r.get_height() + 1);
+    r.set_width(r.get_width() + 1);
+}
+// pass by value, changes will not stick
 void enlargeRectangle(Rectangle r)
 {
     r.set_height(r.get_height() + 1);
